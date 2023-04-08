@@ -5,59 +5,62 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-	private UnityEngine.CharacterController cc;
-	private Vector3 direction;
-	public float forwardSpeed;
-
-	private int desireLane = 1;
-	public float laneDistance;
+	
+    private UnityEngine.CharacterController cc;
+    private Vector3 direction;
+    public float forwardSpeed;
+    private int desireLane = 1;
+    public float laneDistance;
+    private Animator animator; // Added Animator variable
 
     void Start()
-	{
-		cc = GetComponent<UnityEngine.CharacterController>();
-	}
+    {
+        cc = GetComponent<UnityEngine.CharacterController>();
+        animator = GetComponent<Animator>(); // Initialize Animator
+    }
 
-	void Update()
-	{
-		direction.z = forwardSpeed;
+    void Update()
+    {
+        direction.z = forwardSpeed;
 
         if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
         {
-			desireLane++;
+            desireLane++;
             if (desireLane == 3)
             {
-				desireLane = 2;
+                desireLane = 2;
             }
         }
 
-		if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
-		{
-			desireLane--;
-			if (desireLane == -1)
-			{
-				desireLane = 0;
-			}
-		}
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+        {
+            desireLane--;
+            if (desireLane == -1)
+            {
+                desireLane = 0;
+            }
+        }
 
-		Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
-
+        Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
 
         if (desireLane == 0)
         {
-			targetPosition += Vector3.left * laneDistance;
+            targetPosition += Vector3.left * laneDistance;
         }
         else if (desireLane == 2)
         {
-			targetPosition += Vector3.right * laneDistance;
-		}
+            targetPosition += Vector3.right * laneDistance;
+        }
 
-		transform.position = targetPosition;
+        transform.position = targetPosition;
 
-	}
-
-	private void FixedUpdate()
-    {
-		cc.Move(direction * Time.fixedDeltaTime);
+        // Set Animator parameters
+        animator.SetFloat("Speed", forwardSpeed);
+        animator.SetInteger("Lane", desireLane);
     }
 
+    private void FixedUpdate()
+    {
+        cc.Move(direction * Time.fixedDeltaTime);
+    }
 }
