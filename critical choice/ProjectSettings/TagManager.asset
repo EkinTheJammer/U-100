@@ -8,6 +8,8 @@ TagManager:
   - LowObstacle
   - LevelParent
   - Collectible
+  - Gate
+  - GateRED
   layers:
   - Default
   - TransparentFX
