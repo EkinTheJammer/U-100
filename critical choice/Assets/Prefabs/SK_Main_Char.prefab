@@ -305,7 +305,6 @@ GameObject:
   - component: {fileID: 6104495290597874155}
   - component: {fileID: 7683642206809799165}
   - component: {fileID: 7683642206809799169}
-  - component: {fileID: 7683642206809799170}
   m_Layer: 0
   m_Name: SK_Main_Char
   m_TagString: Untagged
@@ -378,19 +377,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2039019b221be7d40be91522a69be28e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _text: {fileID: 0}
---- !u!114 &7683642206809799170
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 656534231424178475}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a171228a645a7cc44919ac31d137e3e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 0}

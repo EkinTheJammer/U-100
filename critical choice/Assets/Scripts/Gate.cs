@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class GreenGate : MonoBehaviour
+public class Gate : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _text;
     public static int totalScore;
@@ -20,6 +20,13 @@ public class GreenGate : MonoBehaviour
         {
             Destroy(collision.gameObject);
             totalScore++;
+            _text.text = totalScore.ToString();
+        }
+
+        if (collision.gameObject.CompareTag("GateRED"))
+        {
+            Destroy(collision.gameObject);
+            totalScore--;
             _text.text = totalScore.ToString();
         }
     }
