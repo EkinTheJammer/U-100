@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class SameScene : MonoBehaviour
+public class RestartLevel : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text1;
     private Scene _scene;
 
-    
     private void Awake()
     {
         _scene = SceneManager.GetActiveScene();
