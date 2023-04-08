@@ -481,6 +481,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 945966740371829552, guid: f7e4ccbbc5889e9408743c3967d33835,
+        type: 3}
+      propertyPath: m_TagString
+      value: GateRED
+      objectReference: {fileID: 0}
     - target: {fileID: 1193435216547058337, guid: f7e4ccbbc5889e9408743c3967d33835,
         type: 3}
       propertyPath: m_RootOrder
@@ -922,11 +927,6 @@ PrefabInstance:
       value: SK_Main_Char
       objectReference: {fileID: 0}
     - target: {fileID: 7683642206809799169, guid: 1a8099b36e7cfe94fb6d3b0b510d97e9,
-        type: 3}
-      propertyPath: _text
-      value: 
-      objectReference: {fileID: 1995822367}
-    - target: {fileID: 7683642206809799170, guid: 1a8099b36e7cfe94fb6d3b0b510d97e9,
         type: 3}
       propertyPath: _text
       value: 
