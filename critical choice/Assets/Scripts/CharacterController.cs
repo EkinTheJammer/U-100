@@ -9,12 +9,15 @@ public class CharacterController : MonoBehaviour
 	private Vector3 direction;
 	public float forwardSpeed;
 
+	private Animator anim;
+
 	private int desireLane = 1;
 	public float laneDistance;
 
     void Start()
 	{
 		cc = GetComponent<UnityEngine.CharacterController>();
+		anim = GetComponent<Animator>();
 	}
 
 	void Update()
