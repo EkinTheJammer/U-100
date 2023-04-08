@@ -11,12 +11,12 @@ public class CharacterController : MonoBehaviour
     public float forwardSpeed;
     private int desireLane = 1;
     public float laneDistance;
-    private Animator animator; // Added Animator variable
+    private Animator _animator; // Added Animator variable
 
     void Start()
     {
         cc = GetComponent<UnityEngine.CharacterController>();
-        animator = GetComponent<Animator>(); // Initialize Animator
+        _animator = GetComponent<Animator>(); // Initialize Animator
     }
 
     void Update()
@@ -55,8 +55,8 @@ public class CharacterController : MonoBehaviour
         transform.position = targetPosition;
 
         // Set Animator parameters
-        animator.SetFloat("Speed", forwardSpeed);
-        animator.SetInteger("Lane", desireLane);
+        _animator.SetFloat("Speed", forwardSpeed);
+        _animator.SetInteger("Lane", desireLane);
     }
 
     private void FixedUpdate()
