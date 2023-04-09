@@ -5,10 +5,10 @@ using TMPro;
 
 public class Gate : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _text;
+    [SerializeField] public TextMeshProUGUI _text;
     public static int totalScore;
 
-    private void Awake()
+    public void Awake()
     {
         _text.text = totalScore.ToString();
     }

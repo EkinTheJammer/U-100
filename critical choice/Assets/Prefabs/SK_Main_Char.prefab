@@ -365,6 +365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 508fb7b883e8e2c4386f0189adff1827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 5
+  maxPositionX: 2
   playerSpeed: 1
   forwardSpeed: 2
 --- !u!114 &7683642206809799169
