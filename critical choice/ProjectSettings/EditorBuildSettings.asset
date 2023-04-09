@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/1.unity
     guid: 46ce66d2037d5474ab771b1ff092e2de
   - enabled: 1
-    path: Assets/Scenes/2.unity
-    guid: 87105d0c270b3da4cafc7b64d8284e9a
+    path: Assets/Scenes/Esra.unity
+    guid: 5cc881e399312b341930cbef490b7831
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 7abe46dede6624a60a115c533b19a2a8,
       type: 2}
