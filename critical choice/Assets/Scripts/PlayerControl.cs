@@ -4,13 +4,32 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
+
+
+    [SerializeField] private float moveSpeed = 5f; // hareket hýzý
+    [SerializeField] private float maxPositionX = 2f; // maksimum konum X ekseni deðeri
+    private Vector2 _position;
+
+
     Vector3 firstPos, endPos;
     public float playerSpeed;
     public float forwardSpeed;
     Vector3 direction;
 
-    void Update()
+        
+    private void Update()
+
+
     {
+        float inputX = Input.GetAxisRaw("Horizontal"); // yatay girdi okunur
+        float displacementX = inputX * moveSpeed * Time.deltaTime; // hareket mesafesi hesaplanýr
+
+        Vector3 newPosition = transform.localPosition + new Vector3(displacementX, 0f, 0f); // yeni konum hesaplanýr
+
+        newPosition.x = Mathf.Clamp(newPosition.x, -maxPositionX, maxPositionX); // konum X ekseni deðeri sýnýrlanýr
+
+        transform.localPosition = newPosition; // nesne konumu güncellenir
+    
         direction.z = forwardSpeed;
 
         if (Input.GetMouseButtonDown(0))
@@ -29,6 +48,8 @@ public class PlayerControl : MonoBehaviour
             endPos = Vector3.zero;   
         }
     }
+
+
 
     private void FixedUpdate()
     {
