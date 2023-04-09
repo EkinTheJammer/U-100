@@ -8,6 +8,7 @@ public class PlayerControl : MonoBehaviour
     public float playerSpeed;
     public float forwardSpeed;
     Vector3 direction;
+
     void Update()
     {
         direction.z = forwardSpeed;
