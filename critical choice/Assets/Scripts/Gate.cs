@@ -17,7 +17,6 @@ public class Gate : MonoBehaviour
         _text.text = "Score: " + totalScore.ToString();
     }
 
-    
     private void OnTriggerEnter(Collider collision)
     {
         BackgroundMusic.Play();
