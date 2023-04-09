@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class RetryButtonScript : MonoBehaviour
+public class ReturnMainMenu : MonoBehaviour
 {
     public void Playbutton()
     {
-        Gate.totalScore = 0;
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }

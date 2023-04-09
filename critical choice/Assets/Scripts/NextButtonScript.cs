@@ -7,7 +7,15 @@ public class NextButtonScript : MonoBehaviour
 {
     public void Playbutton()
     {
-        SceneManager.LoadScene(2);
+        if (finishlin.played == 2)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else
+        {
+            Gate.totalScore = 0;
+            SceneManager.LoadScene(2);
+        }
 
     }
 }
