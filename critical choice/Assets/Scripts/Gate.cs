@@ -16,10 +16,13 @@ public class Gate : MonoBehaviour
     {
         _text.text = "Score: " + totalScore.ToString();
     }
+    private void Start()
+    {
+        BackgroundMusic.Play();
+    }
 
     private void OnTriggerEnter(Collider collision)
     {
-        BackgroundMusic.Play();
        
         if (collision.gameObject.CompareTag("Gate"))
         {
@@ -34,7 +37,7 @@ public class Gate : MonoBehaviour
             RedAudio.Play();
             Destroy(collision.gameObject);
             totalScore--;
-            _text.text = "Score: " + totalScore.ToString();
+            _text.text = "Score: " + totalScore.ToString();           
         }
     }
 }
