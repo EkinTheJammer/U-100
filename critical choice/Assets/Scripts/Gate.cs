@@ -8,26 +8,34 @@ public class Gate : MonoBehaviour
     [SerializeField] public TextMeshProUGUI _text;
     public static int totalScore;
 
+    public AudioSource GreenAudio;
+    public AudioSource RedAudio;
+    public AudioSource BackgroundMusic;
+
     public void Awake()
     {
-        _text.text = totalScore.ToString();
+        _text.text = "Score: " + totalScore.ToString();
     }
 
+    
     private void OnTriggerEnter(Collider collision)
     {
+        BackgroundMusic.Play();
        
         if (collision.gameObject.CompareTag("Gate"))
         {
+            GreenAudio.Play();
             Destroy(collision.gameObject);
             totalScore++;
-            _text.text = totalScore.ToString();
+            _text.text = "Score: " + totalScore.ToString();
         }
 
         if (collision.gameObject.CompareTag("GateRED"))
         {
+            RedAudio.Play();
             Destroy(collision.gameObject);
             totalScore--;
-            _text.text = totalScore.ToString();
+            _text.text = "Score: " + totalScore.ToString();
         }
     }
 }
