@@ -4,22 +4,16 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-
-
     [SerializeField] private float moveSpeed = 5f; // hareket hýzý
     [SerializeField] private float maxPositionX = 2f; // maksimum konum X ekseni deðeri
     private Vector2 _position;
-
 
     Vector3 firstPos, endPos;
     public float playerSpeed;
     public float forwardSpeed;
     Vector3 direction;
 
-        
     private void Update()
-
-
     {
         float inputX = Input.GetAxisRaw("Horizontal"); // yatay girdi okunur
         float displacementX = inputX * moveSpeed * Time.deltaTime; // hareket mesafesi hesaplanýr
@@ -48,8 +42,6 @@ public class PlayerControl : MonoBehaviour
             endPos = Vector3.zero;   
         }
     }
-
-
 
     private void FixedUpdate()
     {

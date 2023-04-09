@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class WinLoseScene : MonoBehaviour
-
 {
     public int score = 0; // Puan deðeri
     public Text scoreText; // UI üzerindeki puan metni
-
     public GameObject winScreen; // Win ekraný
     public GameObject loseScreen; // Lose ekraný
 
